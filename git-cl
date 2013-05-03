@@ -553,7 +553,7 @@ def CmdUpload(args):
   subprocess.call(['git', 'diff', '--no-ext-diff', '--stat', '-M'] + args,
                   env=env)
 
-  upload_args = ['--assume_yes']  # Don't ask about untracked files.
+  upload_args = ['--assume_yes', '--private']  # Don't ask about untracked files.
   upload_args.extend(['--server', settings.GetServer()])
   if options.reviewers:
     upload_args.extend(['--reviewers', options.reviewers])
